@@ -1,0 +1,14 @@
+#ifndef PARAMETERS
+#define PARAMETERS
+
+#define MAX_CHECKS 8
+#define MAX_TASKS 4
+
+#define MAX_AOV_DIM 6
+
+#define MAX_REGIONS 8
+
+
+#define THRESH 1e-10
+
+#endif

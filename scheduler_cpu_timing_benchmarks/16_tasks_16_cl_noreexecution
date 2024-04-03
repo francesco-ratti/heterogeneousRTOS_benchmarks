@@ -1,0 +1,695 @@
+/*
+    Copyright (C) 2017 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+    Copyright (c) 2012 - 2022 Xilinx, Inc. All Rights Reserved.
+	SPDX-License-Identifier: MIT
+
+
+    http://www.FreeRTOS.org
+    http://aws.amazon.com/freertos
+
+
+    1 tab == 4 spaces!
+ */
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "xil_printf.h"
+
+#include "portable.h"
+
+#include "perf_timer.h"
+
+static void prvTaskOne( void *pvParameters );
+static void prvTaskTwo( void *pvParameters );
+static void prvTaskThree( void *pvParameters );
+static void prvTaskFour( void *pvParameters );
+static void prvTaskFive( void *pvParameters );
+static void prvTaskSix( void *pvParameters );
+static void prvTaskSeven( void *pvParameters );
+static void prvTaskEight( void *pvParameters );
+static void prvTaskNine( void *pvParameters );
+static void prvTaskTen( void *pvParameters );
+static void prvTaskEleven( void *pvParameters );
+static void prvTaskTwelve( void *pvParameters );
+static void prvTaskThirteen( void *pvParameters );
+static void prvTaskFourteen( void *pvParameters );
+static void prvTaskFifteen( void *pvParameters );
+static void prvTaskSixteen( void *pvParameters );
+
+#include <stdio.h>
+
+//static FAULTDETECTOR_region_t trainedRegions[FAULTDETECTOR_MAX_CHECKS][FAULTDETECTOR_MAX_REGIONS];
+//static u8 n_regions[FAULTDETECTOR_MAX_CHECKS];
+
+int main( void )
+{
+	xRTTaskCreate( prvTaskOne,
+			( const char * ) "One",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskTwo,
+			( const char * ) "Two",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskThree,
+			( const char * ) "Three",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskFour,
+			( const char * ) "Four",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+
+	xRTTaskCreate( prvTaskFive,
+			( const char * ) "Five",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskSix,
+			( const char * ) "Six",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+
+	xRTTaskCreate( prvTaskSeven,
+			( const char * ) "Seven",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskEight,
+			( const char * ) "Eight",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskNine,
+			( const char * ) "Nine",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskTen,
+			( const char * ) "Ten",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskEleven,
+			( const char * ) "Eleven",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskTwelve,
+			( const char * ) "Twelve",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+
+	xRTTaskCreate( prvTaskThirteen,
+			( const char * ) "Thirteen",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskFourteen,
+			( const char * ) "Fourteen",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskFifteen,
+			( const char * ) "Fifteen",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+	xRTTaskCreate( prvTaskSixteen,
+			( const char * ) "Sixteen",
+			configMINIMAL_STACK_SIZE,
+			NULL,
+			tskIDLE_PRIORITY,
+			NULL,
+			16, //deadline
+			16, //period
+			15,
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
+	); //wcet
+
+
+//	vTaskStartFaultDetector(
+//			//#ifdef trainMode
+//			//			0, //do not load from sd, load from supplied trainedRegions and n_regions instead
+//			//#else
+//			//			1,
+//			//#endif
+//			0,
+//			trainedRegions,
+//			n_regions);
+//	//	xil_printf("%u\n", sizeof(FAULTDETECTOR_testpointShortDescriptorStr));
+//
+	vTaskStartScheduler();
+
+	//should never reach this point
+	for( ;; );
+}
+
+#include "perf_timer.h"
+
+/*-----------------------------------------------------------*/
+static void prvTaskOne( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("One %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+/*-----------------------------------------------------------*/
+static void prvTaskTwo( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Two %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskThree( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Three %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskFour( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskFive( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskSix( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskSeven( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskEight( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskNine( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskTen( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskEleven( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskTwelve( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskThirteen( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskFourteen( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskFifteen( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+
+static void prvTaskSixteen( void *pvParameters )
+{
+	for (;;) {
+//		xil_printf("Four %u\n", get_clock_L());
+		xil_printf("%u\n", get_clock_L());
+		if (get_clock_U()!=0)
+			xil_printf("err up not 0");
+
+		for(;;) {}
+		vTaskJobEnd();
+	}
+}
+

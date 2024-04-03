@@ -1,0 +1,73 @@
+		int prvGenerateSchedulerDataFromTaskSet(RTTask_t prvRTTasksList[configMAX_RT_TASKS], u8 numberOfTasks,
+				u8 maxTasks,
+				u32 tasksTCBPtrs[configMAX_RT_TASKS],
+				u32 tasksWCETs[configCRITICALITY_LEVELS][configMAX_RT_TASKS],
+				u32 tasksDerivativesDeadlines[configCRITICALITY_LEVELS][configMAX_RT_TASKS],
+				u32 tasksDeadlines[configCRITICALITY_LEVELS][configMAX_RT_TASKS],
+				u32 tasksPeriods[configMAX_RT_TASKS],
+				u32 criticalityLevels[configMAX_RT_TASKS]) {
+
+//			int k=find_k(prvRTTasksList, numberOfTasks);
+//			if (k==-1) {
+//				xil_printf("task set not schedulable");
+//				return -1;
+//			}
+			int k=-2; //TESTING PURPOSES
+
+			float x;
+			if (k==-2) {
+				x=1;
+			} else {
+				x=calculate_x(prvRTTasksList, numberOfTasks, k);
+			}
+
+			for (int i = 0; i < numberOfTasks; i++) {
+				tasksTCBPtrs[i]=prvRTTasksList[i].taskTCB;
+				for (int j=0; j<=prvRTTasksList[i].pxCriticalityLevel; j++) {
+#ifdef configSCHEDULER_SOFTWARE
+					tasksWCETs[j][i]=
+							ceil
+							(
+
+									(configATOMIC_SOFTWARE_SCHEDULER_OVERHEAD_WITH_REEXECUTION_IN_MICROS-configATOMIC_SOFTWARE_SCHEDULER_OVERHEAD_IN_MICROS+prvRTTasksList[i].pxWcet[j]+configJOBEND_OVERHEAD_SOFTWARE_SCHEDULER_IN_MICROS)
+									/
+									(configTICK_PERIOD_IN_MICROS-configJOBEND_OVERHEAD_SOFTWARE_SCHEDULER_IN_MICROS)
+
+							);
+#else
+					tasksWCETs[j][i]=
+							prvConvertMicrosToFPGAClockCycles
+							(
+									prvRoundMicrosToFPGASchedulerAtomicTime
+									(
+											prvRoundMicrosToFPGASchedulerClock(configATOMIC_OVERHEAD_WITH_REEXECUTION_FPGA_SCHEDULER_IN_MICROS+prvRTTasksList[i].pxWcet[j]+configJOBEND_OVERHEAD_FPGA_SCHEDULER_IN_MICROS)
+											+
+											prvRoundMicrosToFPGASchedulerClock(configATOMIC_OVERHEAD_FPGA_SCHEDULER_IN_MICROS)
+									)
+							);
+#endif
+				}
+				generate_deadlines(tasksDerivativesDeadlines, tasksDeadlines, prvRTTasksList[i], i, x, k),
+#ifdef configSCHEDULER_SOFTWARE
+				tasksPeriods[i]=prvConvertMicrosToSoftwareSchedulerTicks(prvRTTasksList[i].pxPeriod);
+#else
+				tasksPeriods[i]=prvConvertMicrosToFPGAClockCycles(prvRTTasksList[i].pxPeriod)-1;
+#endif
+				criticalityLevels[i]=prvRTTasksList[i].pxCriticalityLevel;
+				prvRTTasksList[i].taskTCB->requiresFaultDetection=prvRTTasksList[i].pxCriticalityLevel>0 ? 0xFF : 0x0;
+				prvRTTasksList[i].taskTCB->executionMode=EXECMODE_NORMAL;
+			}
+
+
+			for (int i=numberOfTasks; i < maxTasks; i++) {
+				tasksTCBPtrs[i]=0x0;
+				for (int j=0; j<configCRITICALITY_LEVELS; j++) {
+					tasksWCETs[j][i]=0xFFFFFFFF;
+					tasksDeadlines[j][i]=0xFFFFFFFF;
+				}
+				tasksPeriods[i]=0xFFFFFFFF;
+				criticalityLevels[i]=0xFFFFFFFF;
+			}
+			return 0;
+		}
+
