@@ -67,7 +67,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -75,7 +75,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwo,
 			( const char * ) "Two",
@@ -85,7 +93,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -93,7 +101,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskThree,
 			( const char * ) "Three",
@@ -103,7 +119,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -111,7 +127,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskFour,
 			( const char * ) "Four",
@@ -121,7 +145,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -129,7 +153,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskFive,
@@ -140,7 +172,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -148,7 +180,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskSix,
 			( const char * ) "Six",
@@ -158,7 +198,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -166,7 +206,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskSeven,
 			( const char * ) "Seven",
@@ -176,7 +224,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -184,7 +232,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskEight,
 			( const char * ) "Eight",
@@ -194,7 +250,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -202,7 +258,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskNine,
 			( const char * ) "Nine",
@@ -212,7 +276,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -220,7 +284,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTen,
 			( const char * ) "Ten",
@@ -230,7 +302,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -238,7 +310,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskEleven,
 			( const char * ) "Eleven",
@@ -248,7 +328,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -256,7 +336,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwelve,
 			( const char * ) "Twelve",
@@ -266,7 +354,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -274,7 +362,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskThirteen,
@@ -285,7 +381,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -293,7 +389,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskFourteen,
 			( const char * ) "Fourteen",
@@ -303,7 +407,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -311,7 +415,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskFifteen,
@@ -322,7 +434,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -330,7 +442,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskSixteen,
 			( const char * ) "Sixteen",
@@ -340,7 +460,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -348,7 +468,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskSeventeen,
@@ -359,7 +487,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -367,7 +495,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskEighteen,
 			( const char * ) "Eighteen",
@@ -377,7 +513,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -385,7 +521,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskNineteen,
 			( const char * ) "Nineteen",
@@ -395,7 +539,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -403,7 +547,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskTwenty,
@@ -414,7 +566,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -422,7 +574,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskTwentyOne,
@@ -433,7 +593,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -441,7 +601,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwentyTwo,
 			( const char * ) "TwentyTwo",
@@ -451,7 +619,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -459,7 +627,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskTwentyThree,
@@ -470,7 +646,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -478,7 +654,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwentyFour,
 			( const char * ) "TwentyFour",
@@ -488,7 +672,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -496,7 +680,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwentyFive,
 			( const char * ) "TwentyFive",
@@ -506,7 +698,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -514,7 +706,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwentySix,
 			( const char * ) "TwentySix",
@@ -524,7 +724,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -532,7 +732,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskTwentySeven,
@@ -543,7 +751,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -551,7 +759,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskTwentyEight,
 			( const char * ) "TwentyEight",
@@ -561,7 +777,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -569,7 +785,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskTwentyNine,
@@ -580,7 +804,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -588,7 +812,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskThirty,
 			( const char * ) "Thirty",
@@ -598,7 +830,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -606,7 +838,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 	xRTTaskCreate( prvTaskThirtyOne,
@@ -617,7 +857,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -625,7 +865,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 	xRTTaskCreate( prvTaskThirtyTwo,
 			( const char * ) "ThirtyTwo",
@@ -635,7 +883,7 @@ int main( void )
 			NULL,
 			32, //deadline
 			32, //period
-			7,
+			15,
 			1,
 			2,
 			3,
@@ -643,7 +891,15 @@ int main( void )
 			5,
 			6,
 			7,
-			8
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16
 	); //wcet
 
 //	vTaskStartFaultDetector(
